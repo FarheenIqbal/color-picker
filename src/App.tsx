@@ -50,6 +50,9 @@ function App() {
           backgroundColor: str,
         }}
       ></div>
+      <p className="notification has-text-link has-text-centered">
+        Red:{red} Blue:{blue} Green:{green}
+      </p>
     </div>
   );
 }
