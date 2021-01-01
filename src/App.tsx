@@ -16,27 +16,21 @@ function App() {
       <div className="box">
         <Slider
           colorName="red"
-          min={0}
-          max={255}
           step={5}
           colorValue={red}
-          setColorValue={setRed}
+          onColorChange={setRed}
         />
         <Slider
           colorName="green"
-          min={0}
-          max={255}
           step={5}
           colorValue={green}
-          setColorValue={setGreen}
+          onColorChange={setGreen}
         />
         <Slider
           colorName="blue"
-          min={0}
-          max={255}
           step={5}
           colorValue={blue}
-          setColorValue={setBlue}
+          onColorChange={setBlue}
         />
       </div>
       <div

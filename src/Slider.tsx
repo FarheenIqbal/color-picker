@@ -2,39 +2,30 @@ import React from 'react';
 
 type SliderProps = {
   colorName: 'red' | 'green' | 'blue';
-  min: number;
-  max: number;
   step: number;
   colorValue: number;
-  setColorValue(x: number): void;
+  onColorChange(x: number): void;
 };
 
-function Slider({
-  colorName,
-  min,
-  max,
-  step,
-  colorValue,
-  setColorValue,
-}: SliderProps) {
+function Slider({ colorName, step, colorValue, onColorChange }: SliderProps) {
   return (
     <div className="columns is-centered">
       <label className="column is-1 has-text-link has-text-right">
         {colorName.toUpperCase()}
       </label>
-      <label className="column is-1 has-text-right"> {min} </label>
+      <label className="column is-1 has-text-right"> 0 </label>
       <input
         list="tick-marks"
         className="column is-9"
         value={colorValue}
-        onChange={(event) => setColorValue(Number.parseInt(event.target.value))}
+        onChange={(event) => onColorChange(Number.parseInt(event.target.value))}
         type="range"
         name={`${colorName}`}
-        min={`${min}`}
-        max={`${max}`}
+        min="0"
+        max="255"
         step={`${step}`}
       />
-      <label className="column is-1"> {max} </label>
+      <label className="column is-1"> 255 </label>
     </div>
   );
 }
